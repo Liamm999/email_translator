@@ -18,6 +18,17 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url("/images/anime_light.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  transition: background-image 0.3s ease-in-out;
+}
+
+html.dark body {
+  background-image: url("/images/anime_night.jpg");
 }
 
 @layer utilities {
@@ -25,3 +36,140 @@ body {
     text-wrap: balance;
   }
 }
+
+
+/* Dark mode styles */
+.dark p, .dark span, .dark div, .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6, .dark strong, .dark i, .dark a {
+  color: white;
+}
+
+/* Email content styling for dark mode */
+.dark .email-content {
+  color: #e5e7eb;
+}
+
+.dark .email-content a {
+  color: #60a5fa;
+}
+
+.dark .email-content img {
+  opacity: 0.9;
+}
+
+
+.animated-text {
+  animation: colorChange 4s infinite alternate; /* Applies the animation */
+}
+
+@keyframes colorChange {
+  0% {
+      color: #FF0000; /* Red */
+  }
+  12.5% {
+      color: #FF7F00; /* Orange */
+  }
+  25% {
+      color: #00FF00; /* Green */
+  }
+  37.5% {
+      color: #00FFFF; /* Cyan */
+  }
+  50% {
+      color: #0000FF; /* Blue */
+  }
+  62.5% {
+      color: #7F00FF; /* Violet */
+  }
+  75% {
+      color: #FFFF00; /* Yellow */
+  }
+  87.5% {
+      color: #FF1493; /* Deep Pink */
+  }
+  100% {
+      color: #FF00FF; /* Magenta */
+  }
+}
+
+.shadow-dance-text {
+  text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+  animation: shadow-dance 2s infinite;
+}
+
+@keyframes shadow-dance {
+  0%, 100% {
+      text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+  }
+  50% {
+      text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+  }
+}
+
+.hover-container {
+  display: inline-block;
+  position: relative;
+}
+
+.explosive-text {
+  text-decoration: underline;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  position: relative;
+  transition: transform 0.3s ease-out;
+}
+
+.explosive-text:hover {
+  transform: scale(1.1);
+}
+
+.explosive-text:hover::before,
+.explosive-text:hover::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: burst 0.8s ease-out forwards;
+}
+
+.explosive-text:hover::before {
+  background: radial-gradient(circle, rgba(25, 50, 241, 0.6), transparent);
+  z-index: -1;
+}
+
+.explosive-text:hover::after {
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.6), transparent);
+  z-index: -2;
+}
+
+@keyframes burst {
+  0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 1;
+  }
+  70% {
+      opacity: 0.8;
+  }
+  100% {
+      transform: translate(-50%, -50%) scale(1.5);
+      opacity: 0;
+  }
+}
+
+.neon-text {
+  text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+      text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+  }
+  100% {
+      text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 160px #00d4ff;
+  }
+}
+
