@@ -17,6 +17,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Email Translator",
   description: "Ứng dụng đọc và dịch email tự động",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 import { ToastContainer } from "react-toastify";
