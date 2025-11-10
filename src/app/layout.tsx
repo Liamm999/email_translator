@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   description: "Ứng dụng đọc và dịch email tự động",
   icons: {
     icon: "/favicon.png",
+    apple: "/favicon.png",
   },
 };
 
